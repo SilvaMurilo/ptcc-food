@@ -1,0 +1,17 @@
+Para rodar o containers:
+
+docker compose down --volumes
+docker compose up --build -d
+
+TODO: FAÇAM O PLANEJAMENTO DE TODAS AS FUNCIONALIDADES/TELAS QUE O SISTEMA VAI TER aí iremos começar a desenhar as rotas, ok?
+
+criar o login
+criar o criar usuário
+
+TABELAS (COLUNAS)
+users (id, nome, celular, role (array das funções), login, senha)
+clientes (id, nome, celular)
+restaurantes (id, nome, endereço, user_id)
+produtos (id, descricao, restaurante_id)
+vendas (id, user_id, restaurante_id)
+item_venda (id, venda_id, produto_id, qtd)
