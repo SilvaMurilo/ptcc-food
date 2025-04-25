@@ -20,6 +20,13 @@ if (isset($_GET['finalizar'])) {
     header('Location: products.php');
     exit;
 }
+
+if (isset($_GET['limpar'])) {
+    $_SESSION['carrinho'] = [];
+    $_SESSION['msg'] = 'Carrinho limpo!';
+    header('Location: products.php');
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -68,6 +75,12 @@ if (isset($_GET['finalizar'])) {
         .btn:hover {
             background-color: #0056b3;
         }
+        .btn-clear {
+            background-color: #dc3545;
+        }
+        .btn-clear:hover {
+            background-color: #b02a37;
+        }
         .total {
             font-size: 18px;
             font-weight: bold;
@@ -80,6 +93,11 @@ if (isset($_GET['finalizar'])) {
             border: 1px solid #c3e6cb;
             border-radius: 6px;
             margin-bottom: 20px;
+        }
+        .botoes {
+            margin-top: 15px;
+            display: flex;
+            gap: 10px;
         }
     </style>
 </head>
@@ -121,7 +139,10 @@ if (isset($_GET['finalizar'])) {
         <?php endforeach; ?>
     </div>
     <p class="total">Total: R$ <?= number_format($total, 2, ',', '.') ?></p>
-    <a class="btn" href="?finalizar=true">Finalizar Compra</a>
+    <div class="botoes">
+        <a class="btn" href="?finalizar=true">Finalizar Compra</a>
+        <a class="btn btn-clear" href="?limpar=true">Limpar Carrinho</a>
+    </div>
 <?php else: ?>
     <p>Carrinho vazio.</p>
 <?php endif; ?>
