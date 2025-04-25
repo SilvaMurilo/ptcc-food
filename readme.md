@@ -13,3 +13,4 @@ Ele fornece uma base prática para que os estudantes compreendam conceitos funda
 - ✅ Sessões
 - ✅ Login
 - ✅ Renderização dinâmica de conteúdo
+- ✅ Carrinho (com mocks)
